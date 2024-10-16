@@ -7,7 +7,7 @@ import br.com.fiap.fintechg5.commons.TipoCliente;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-public class CadastroClienteView {
+public class CreateClienteView {
     public static void main(String[] args) {
         try {
             ClienteDao dao = new ClienteDao();

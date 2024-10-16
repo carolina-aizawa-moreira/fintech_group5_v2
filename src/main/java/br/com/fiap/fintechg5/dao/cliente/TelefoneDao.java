@@ -43,25 +43,26 @@ public class TelefoneDao {
         }
     }
 
-    public PessoaFisica getById(final long id) throws SQLException, NotFoundException {
-        String query = "SELECT * FROM tb_pessoa_fisica WHERE id = ?";
+    public Telefone getById(final long id) throws SQLException, NotFoundException {
+        String query = "SELECT * FROM tb_telefone WHERE id = ?";
         PreparedStatement stm = conn.prepareStatement(query);
         stm.setLong(1, id);
 
         ResultSet result = stm.executeQuery();
 
         if (!result.next()) {
-            throw new NotFoundException("PESSOA FISICA NAO ENCONTRADA!");
+            throw new NotFoundException("TELEFONE NAO ENCONTRADO!");
         }
 
-        Long pfId = result.getLong("id");
-        String nome = result.getString("nome");
-        String cpf = result.getString("cpf");
-        String rg = result.getString("rg");
-        String genero = result.getString("genero");
+        Long telefoneId = result.getLong("id");
+        int ddi = result.getInt("ddi");
+        int ddd = result.getInt("ddd");
+        String numeroTelefone = result.getString("numero_telefone");
+        String tipoContato = result.getString("tipo_contato");
+        Boolean active = result.getBoolean("active");
         Long idCliente = result.getLong("id_cliente");
 
-        return new PessoaFisica(pfId, nome, cpf, rg, genero, idCliente);
+        return new Telefone(telefoneId,idCliente, ddi, ddd, numeroTelefone, tipoContato, active );
     }
 
     public List<Telefone> getAll() throws SQLException {

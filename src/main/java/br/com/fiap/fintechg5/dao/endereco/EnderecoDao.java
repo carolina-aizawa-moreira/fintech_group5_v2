@@ -1,6 +1,5 @@
 package br.com.fiap.fintechg5.dao.endereco;
 
-import br.com.fiap.fintechg5.entities.cliente.PessoaFisica;
 import br.com.fiap.fintechg5.entities.endereco.Endereco;
 import br.com.fiap.fintechg5.exceptions.NotFoundException;
 import br.com.fiap.fintechg5.factory.ConnectionFactory;

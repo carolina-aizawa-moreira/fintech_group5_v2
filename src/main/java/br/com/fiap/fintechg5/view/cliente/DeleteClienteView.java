@@ -1,7 +1,6 @@
 package br.com.fiap.fintechg5.view.cliente;
 
 import br.com.fiap.fintechg5.dao.cliente.ClienteDao;
-import br.com.fiap.fintechg5.entities.cliente.Cliente;
 import br.com.fiap.fintechg5.exceptions.NotFoundException;
 
 import java.sql.SQLException;
