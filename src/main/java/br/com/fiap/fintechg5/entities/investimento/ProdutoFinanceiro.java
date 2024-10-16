@@ -20,12 +20,12 @@ public class ProdutoFinanceiro {
     public ProdutoFinanceiro() {}
 
     public ProdutoFinanceiro(Long id, Long investimentoId, String tipoProdutoFinanceiro, String descricao,
-                             String nomeInstituicaoFinanceira, String dataFinal) {
+                             String nomeInstituicaoFinanceira, LocalDate dataFinal) {
         this.id = id;
         this.investimentoId = investimentoId;
         this.tipoProdutoFinanceiro = tipoProdutoFinanceiro;
         this.descricao = descricao;
         this.nomeInstituicaoFinanceira = nomeInstituicaoFinanceira;
-        this.dataFinal = LocalDate.parse(dataFinal);
+        this.dataFinal = dataFinal;
     }
 }

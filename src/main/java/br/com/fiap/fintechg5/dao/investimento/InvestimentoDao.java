@@ -9,9 +9,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import static java.math.BigInteger.ZERO;
 
@@ -61,8 +63,8 @@ public class InvestimentoDao {
         Long idCliente = result.getLong("id_cliente");
         String tipoInvestimento = result.getString("tipo_investimento");
         double valor = result.getDouble("valor_investido");
-        String dataInicial = result.getString("data_inicial");
-        String dataFinal = result.getString("data_final");
+        LocalDate dataInicial = result.getDate("data_inicial").toLocalDate();
+        LocalDate dataFinal = result.getDate("data_final").toLocalDate();
 
         return new Investimento(investimentoId, idCliente, tipoInvestimento, valor, dataInicial, dataFinal);
     }
@@ -79,8 +81,8 @@ public class InvestimentoDao {
             Long idCliente = result.getLong("id_cliente");
             String tipoInvestimento = result.getString("tipo_investimento");
             double valor = result.getDouble("valor_investido");
-            String dataInicial = result.getString("data_inicial");
-            String dataFinal = result.getString("data_final");
+            LocalDate dataInicial = result.getDate("data_inicial").toLocalDate();
+            LocalDate dataFinal = result.getDate("data_final").toLocalDate();
 
             list.add(new Investimento(investimentoId, idCliente, tipoInvestimento, valor, dataInicial, dataFinal));
         }

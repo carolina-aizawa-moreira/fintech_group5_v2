@@ -18,13 +18,13 @@ public class Investimento {
     private LocalDate dataFinal;
 
     public Investimento(long id, long idCliente, String tipoInvestimento, double valorInvestido,
-                        String dataInicial, String dataFinal) {
+                        LocalDate dataInicial, LocalDate dataFinal) {
         this.id = id;
         this.idCliente = idCliente;
         this.tipoInvestimento = tipoInvestimento;
         this.valorInvestido = valorInvestido;
-        this.dataInicial = LocalDate.parse(dataInicial.substring(0,10));
-        this.dataFinal = LocalDate.parse(dataFinal.substring(0,10));
+        this.dataInicial = dataInicial;
+        this.dataFinal = dataFinal;
     }
 
     public Investimento () {}

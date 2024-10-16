@@ -5,7 +5,7 @@ import br.com.fiap.fintechg5.entities.cliente.PessoaFisica;
 
 import java.sql.SQLException;
 
-public class CadastroPessoaFisicaView {
+public class CreatePessoaFisicaView {
     public static void main(String[] args) {
         try {
             PessoaFisicaDao dao = new PessoaFisicaDao();

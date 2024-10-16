@@ -21,13 +21,13 @@ public class Emprestimo {
     public Emprestimo() {}
 
     public Emprestimo(Long id, Long idCliente, String status, double valor, double taxaJuro, int prazo,
-                      String dataConsessao) {
+                      LocalDate dataConsessao) {
         this.id = id;
         this.idCliente = idCliente;
         this.status = status;
         this.valor = valor;
         this.taxaJuro = taxaJuro;
         this.prazo = prazo;
-        this.dataConsessao = LocalDate.parse(dataConsessao.substring(0,10));
+        this.dataConsessao = dataConsessao;
     }
 }
