@@ -59,10 +59,10 @@ public class ProdutoFinanceiroDao {
         String tipoProdutoFinanceiro = result.getString("tipo_produto_financeiro");
         String descricao = result.getString("descricao");
         String nomeInstituicaoFinanceira = result.getString("nome_instituicao_financeira");
-        LocalDate dataFinal = result.getDate("data_final").toLocalDate(); // Converte para LocalDate
+        LocalDate dataFinal = result.getDate("data_final").toLocalDate();
 
         return new ProdutoFinanceiro(produtoId, investimentoId, tipoProdutoFinanceiro, descricao,
-                nomeInstituicaoFinanceira, dataFinal.toString());
+                nomeInstituicaoFinanceira, dataFinal);
     }
 
     public List<ProdutoFinanceiro> getAll() throws SQLException {
@@ -80,7 +80,7 @@ public class ProdutoFinanceiroDao {
             String nomeInstituicaoFinanceira = result.getString("nome_instituicao_financeira");
             LocalDate dataFinal = result.getDate("data_final").toLocalDate();
             list.add(new ProdutoFinanceiro(produtoId, investimentoId, tipoProdutoFinanceiro, descricao,
-                    nomeInstituicaoFinanceira, dataFinal.toString()));
+                    nomeInstituicaoFinanceira, dataFinal));
         }
         return list;
     }

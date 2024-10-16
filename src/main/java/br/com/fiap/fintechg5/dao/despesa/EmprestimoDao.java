@@ -62,7 +62,7 @@ public class EmprestimoDao {
             int prazo = result.getInt("prazo");
             LocalDate dataConsessao = result.getDate("data_concessao").toLocalDate();
 
-            return new Emprestimo(emprestimoId, idCliente, status, valor, taxaJuro, prazo, dataConsessao.toString());
+            return new Emprestimo(emprestimoId, idCliente, status, valor, taxaJuro, prazo, dataConsessao);
         }
 
         public List<Emprestimo> getAll() throws SQLException {
@@ -81,7 +81,7 @@ public class EmprestimoDao {
                 int prazo = result.getInt("prazo");
                 LocalDate dataConsessao = result.getDate("data_concessao").toLocalDate();
 
-                list.add(new Emprestimo(emprestimoId, idCliente, status, valor, taxaJuro, prazo, dataConsessao.toString()));
+                list.add(new Emprestimo(emprestimoId, idCliente, status, valor, taxaJuro, prazo, dataConsessao));
             }
             return list;
         }

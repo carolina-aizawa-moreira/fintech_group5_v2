@@ -15,7 +15,7 @@ public class TelefoneCadastroView {
                     .ddi(55)
                     .ddd(11)
                     .numeroTelefone("998450919")
-                    .tipoContato(TipoContato.CELULAR)
+                    .tipoContato(TipoContato.CELULAR.name())
                     .idCliente(22L)
                     .build();
 
